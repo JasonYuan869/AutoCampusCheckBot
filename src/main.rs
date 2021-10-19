@@ -54,10 +54,6 @@ impl EventHandler for Handler {
         let url = &msg.content;
         println!("Received message from {}", msg.author.name);
 
-        if url.to_lowercase().contains("exit") {
-
-        }
-
         let mut reply = "Error completing form";
         if let Some(_) = KEY_REGEX.find(url) {
             if let Ok(resp) = send_form(url).await {
